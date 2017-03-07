@@ -47,6 +47,8 @@ class ModBase(Base):
             result['exception'] = traceback.format_exc()
         
         result['success'] = _result
+        
+        return result
     
     #----------------------------------------------------------------------
     def attack(self, *args, **kwargs):

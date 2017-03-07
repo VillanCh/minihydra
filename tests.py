@@ -7,6 +7,8 @@
 """
 
 import unittest
+import types
+
 from minihydra import MiniHydra
 from minihydra.core.modmanager import ModManager
 
@@ -24,9 +26,10 @@ class MiniHydraTester(unittest.case.TestCase):
         
         hydra = MiniHydra(target='http://127.0.0.1:5000/auth', mod='testmod',
                           dict_file=None, 
-                          session='default', do_continue=True,
-                          debug=True)
-        hydra.start()
+                          session='default', do_continue=False,
+                          debug=False)
+        gen = hydra.start(async=False)
+        self.assertTrue(isinstance(gen, types.GeneratorType))
         
     #----------------------------------------------------------------------
     def test_mod_manager(self):

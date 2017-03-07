@@ -8,6 +8,9 @@
 
 import unittest
 import os
+import json
+import Queue
+import time
 
 from g3ar import DictParser
 from g3ar import ThreadPool
@@ -20,7 +23,7 @@ from .core.exceptions import ImportModError, NoModExisted, UnknownException
 MINIHYDRA_ROOT = os.path.dirname(__file__)
 
 DEFAULT_SESSION = 'minihydra'
-DO_CONTINUE = True
+DO_CONTINUE = False
 THREAD_MAX = 40
 
 DEFAULT_DICT_PATH = os.path.join(MINIHYDRA_ROOT, 'dicts/default_pd.txt')
@@ -32,7 +35,8 @@ class MiniHydra(object):
     #----------------------------------------------------------------------
     def __init__(self, target, mod, dict_file, session=DEFAULT_SESSION,
                  do_continue=DO_CONTINUE, thread_max=THREAD_MAX, 
-                 result_callback=None, debug=False):
+                 result_callback=None, debug=False,
+                 success_file='result.success.txt'):
         """Constructor"""
         #
         # set target
@@ -62,6 +66,11 @@ class MiniHydra(object):
         self._result_callback = result_callback
         
         #
+        # store the success paylad
+        #
+        self._success_file = success_file
+        
+        #
         # init pool
         #
         clean_mod = not debug
@@ -75,20 +84,23 @@ class MiniHydra(object):
         """"""
         start_new_thread(self._start, name='minihydra-dispatcher')
         
+        resultgen = self.result_gen()
+        
         try:
             if not async:
                 while True:
-                    if self._result_callback:
-                        print self._result_callback(self._result_pool.get())
-                    else:
-                        print self._result_pool.get()
+                    for i in resultgen:
+                        print i
             else:
                 #
                 # async
                 #
-                pass
+                return resultgen
         except KeyboardInterrupt:
-            print 'END'
+            self.save()
+            #print 'END'
+        
+        return resultgen
             
     #----------------------------------------------------------------------
     def _start(self):
@@ -98,11 +110,38 @@ class MiniHydra(object):
         for i in self._dict_parser:
             payloads = modinstance.dict_callback(i)
             self._pool.feed(modinstance.guess, payloads)
-        
+    
     #----------------------------------------------------------------------
     def save(self):
         """"""
         self._dict_parser.force_save()
+    
+    #----------------------------------------------------------------------
+    def _default_result_callback(self, result):
+        """"""
+        if result.get('success'):
+            with open(self._success_file, 'ab+') as fp:
+                fp.write("{payload}\n".format(payload=result))
+        
+        return result
+
+    #----------------------------------------------------------------------
+    def result_gen(self):
+        """"""
+        while True:
+            if self._result_pool.qsize() == 0:
+                time.sleep(1)
+                continue
+            else:
+                result = self._result_pool.get()
+                if result.get('state'):
+                    result = result.get('result')
+                else:
+                    continue
+            
+            yield self._default_result_callback(result)
+        
+        
         
 
 if __name__ == '__main__':
