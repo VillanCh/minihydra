@@ -22,6 +22,16 @@ class NoModExisted(Exception):
 class UnknownException(Exception):
     """"""
     pass
+
+########################################################################
+class NoTarget(Exception):
+    """"""
+    pass
+
+########################################################################
+class NoMod(Exception):
+    """"""
+    pass
     
     
     
