@@ -32,6 +32,12 @@ class NoTarget(Exception):
 class NoMod(Exception):
     """"""
     pass
+
+########################################################################
+class ModReturnError:
+    """"""
+    pass
+    
     
     
     

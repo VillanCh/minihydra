@@ -9,6 +9,7 @@
 import unittest
 import abc
 import traceback
+from .exceptions import ModReturnError
 
 ########################################################################
 class Base(object):
@@ -39,9 +40,19 @@ class ModBase(Base):
         result['success'] = False
         result['payload'] = payloads
         result['exception'] = None
+        result['data'] = None
         
         try:
             _result = self.attack(payloads)
+            if isinstance(_result, (tuple, list,)):
+                assert isinstance(_result[0], bool), '[x] Error! The first return value have to be a bool.'
+                _all = _result
+                _result = _all[0]
+                result['data'] = _all[1:]
+            elif isinstance(_result, bool):
+                pass
+            else:
+                raise ModReturnError('[x] Error return : {}'.format(_result))
         except Exception as e:
             _result = False
             result['exception'] = traceback.format_exc()
