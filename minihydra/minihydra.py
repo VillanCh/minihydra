@@ -76,6 +76,9 @@ class MiniHydra(object):
         self._pool.start()
         self._result_pool = self._pool.get_result_queue()
         
+        
+        self._final_queue = Queue.Queue()
+        
     #----------------------------------------------------------------------
     def set_dict_file(self, dict_file, session=DEFAULT_SESSION, 
                       do_continue=DO_CONTINUE):
@@ -102,10 +105,22 @@ class MiniHydra(object):
         else:
             raise NoMod()
         
-        start_new_thread(self._start, name='minihydra-dispatcher')
+        #
+        # pre attack and check it!
+        #
+        modinstance = self._mod(self._target)
+        finish_it = modinstance.finished
+        if finish_it:
+            self._final_queue.put(modinstance.get_predata())
+            self._result_pool.put(modinstance.get_predata())
+        else:
+            start_new_thread(self._start, name='minihydra-dispatcher', args=tuple([modinstance]))
         
         resultgen = self.result_gen()
         
+        #
+        # async / sync ?
+        #
         try:
             if not async:
                 while True:
@@ -123,9 +138,9 @@ class MiniHydra(object):
         return resultgen
             
     #----------------------------------------------------------------------
-    def _start(self):
+    def _start(self, modinstance):
         """"""
-        modinstance = self._mod(self._target)
+        #modinstance = self._mod(self._target)
         
         for i in self._dict_parser:
             while self._pool.get_task_queue().qsize() >= 50:
@@ -143,6 +158,7 @@ class MiniHydra(object):
     def _default_result_callback(self, result):
         """"""
         if result.get('success'):
+            self._final_queue.put(result)
             with open(self._success_file, 'ab+') as fp:
                 fp.write("{payload}\n".format(payload=result))
         
@@ -209,6 +225,11 @@ class MiniHydra(object):
     def get_total_size(self):
         """"""
         return self._dict_parser.get_total_size()
+    
+    #----------------------------------------------------------------------
+    def get_final_queue(self):
+        """"""
+        self._final_queue
         
         
 

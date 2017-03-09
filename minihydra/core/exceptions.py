@@ -44,6 +44,10 @@ class DictsError(Exception):
     pass
     
     
+########################################################################
+class END(Exception):
+    """"""
+    pass
     
     
     

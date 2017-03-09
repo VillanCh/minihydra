@@ -85,6 +85,11 @@ class MiniHydraCli(Cmd):
         target = opts.target
         mod = opts.mod
         dict_file = opts.dict_file
+        if ',' in dict_file:
+            dict_file = dict_file.split(',')
+        else:
+            pass
+        
         thread_max = opts.thread_max
         session = opts.session
         do_contine = opts.do_continue
