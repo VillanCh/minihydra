@@ -1,4 +1,5 @@
-# MiniHydra: 爆破的艺术
+# MiniHydra: 爆破的艺术 
+[![Build Status](https://travis-ci.org/VillanCh/minihydra.svg?branch=master)](https://travis-ci.org/VillanCh/minihydra)
 
 MiniHydra 我们可以很自豪的把它称作一个爆破框架，为什么？它不仅仅针对密码爆破，
 其实还针对各种需要爆破的场景：尝试各种 Payload 的效果？Fuzz？
