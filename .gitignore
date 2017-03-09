@@ -1,3 +1,7 @@
 #pyc
 *.pyc
 sessions_dat
+session*
+py2env
+py2env/*
+.DS_Store
