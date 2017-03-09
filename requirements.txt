@@ -1,0 +1,16 @@
+appdirs==1.4.3
+blessings==1.6
+cmd2==0.7.0
+colorama==0.3.7
+configparser==3.5.0
+dnspython==1.15.0
+g3ar==0.3.6
+ipaddr==2.1.11
+ipwhois==0.15.1
+IPy==0.83
+packaging==16.8
+prettytable==0.7.2
+progressive==0.3.3
+pyparsing==2.2.0
+six==1.10.0
+tinydb==3.2.2
