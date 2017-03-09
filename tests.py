@@ -28,7 +28,7 @@ class MiniHydraTester(unittest.case.TestCase):
                           dict_file=None, 
                           session='default', do_continue=False,
                           debug=False)
-        gen = hydra.start(async=False)
+        gen = hydra.start(async=True)
         self.assertTrue(isinstance(gen, types.GeneratorType))
         
     #----------------------------------------------------------------------
@@ -51,7 +51,7 @@ class MiniHydraTester(unittest.case.TestCase):
         """"""
         gen = MiniHydra('target','testmod', dict_file=['minihydra/dicts/default_un.txt',
                                                  'minihydra/dicts/default_pd.txt'])
-        gen.start(False)
+        gen.start(True)
 
 if __name__ == '__main__':
     unittest.main()
