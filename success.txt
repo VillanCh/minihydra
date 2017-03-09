@@ -1186,3 +1186,186 @@
 {'exception': None, 'payload': '123456aaa', 'success': True}
 {'exception': None, 'payload': '19791029', 'success': True}
 {'exception': None, 'payload': '27182818', 'success': True}
+{'exception': None, 'data': None, 'payload': '12344321', 'success': True}
+{'exception': None, 'data': None, 'payload': '33333333', 'success': True}
+{'exception': None, 'data': None, 'payload': '3.1415926', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qazwsxedc', 'success': True}
+{'exception': None, 'data': None, 'payload': '987654321', 'success': True}
+{'exception': None, 'data': None, 'payload': 'iloveyou', 'success': True}
+{'exception': None, 'data': None, 'payload': '147258369', 'success': True}
+{'exception': None, 'data': None, 'payload': 'zzzzzzzz', 'success': True}
+{'exception': None, 'data': None, 'payload': '000000000', 'success': True}
+{'exception': None, 'data': None, 'payload': '12121212', 'success': True}
+{'exception': None, 'data': None, 'payload': 'xiazhili', 'success': True}
+{'exception': None, 'data': None, 'payload': '0000000000', 'success': True}
+{'exception': None, 'data': None, 'payload': '520520520', 'success': True}
+{'exception': None, 'data': None, 'payload': '12341234', 'success': True}
+{'exception': None, 'data': None, 'payload': 'abc123456', 'success': True}
+{'exception': None, 'data': None, 'payload': 'a1234567', 'success': True}
+{'exception': None, 'data': None, 'payload': '5845201314', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qaz123456', 'success': True}
+{'exception': None, 'data': None, 'payload': '87654321', 'success': True}
+{'exception': None, 'data': None, 'payload': '369258147', 'success': True}
+{'exception': None, 'data': None, 'payload': '44444444', 'success': True}
+{'exception': None, 'data': None, 'payload': 'q123456789', 'success': True}
+{'exception': None, 'data': None, 'payload': 'aaaaaaaaa', 'success': True}
+{'exception': None, 'data': None, 'payload': '1357924680', 'success': True}
+{'exception': None, 'data': None, 'payload': 'a1111111', 'success': True}
+{'exception': None, 'data': None, 'payload': 'as123456', 'success': True}
+{'exception': None, 'data': None, 'payload': 'aptx4869', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qw123456', 'success': True}
+{'exception': None, 'data': None, 'payload': '1a2b3c4d', 'success': True}
+{'exception': None, 'data': None, 'payload': '123qwe123', 'success': True}
+{'exception': None, 'data': None, 'payload': 'newhappy', 'success': True}
+{'exception': None, 'data': None, 'payload': '74108520', 'success': True}
+{'exception': None, 'data': None, 'payload': '00001111', 'success': True}
+{'exception': None, 'data': None, 'payload': '88771024', 'success': True}
+{'exception': None, 'data': None, 'payload': '1234512345', 'success': True}
+{'exception': None, 'data': None, 'payload': '012345678', 'success': True}
+{'exception': None, 'data': None, 'payload': 'abcd123456', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qq123456789', 'success': True}
+{'exception': None, 'data': None, 'payload': '456456456', 'success': True}
+{'exception': None, 'data': None, 'payload': '111111aa', 'success': True}
+{'exception': None, 'data': None, 'payload': '52013141314', 'success': True}
+{'exception': None, 'data': None, 'payload': '20092009', 'success': True}
+{'exception': None, 'data': None, 'payload': '123456000', 'success': True}
+{'exception': None, 'data': None, 'payload': '123456ABCD', 'success': True}
+{'exception': None, 'data': None, 'payload': '13131313', 'success': True}
+{'exception': None, 'data': None, 'payload': '518518518', 'success': True}
+{'exception': None, 'data': None, 'payload': '88889999', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qwqwqwqw', 'success': True}
+{'exception': None, 'data': None, 'payload': 'q1111111', 'success': True}
+{'exception': None, 'data': None, 'payload': 'jjjjjjjj', 'success': True}
+{'exception': None, 'data': None, 'payload': 'xiaoqiang', 'success': True}
+{'exception': None, 'data': None, 'payload': '0000000000', 'success': True}
+{'exception': None, 'data': None, 'payload': 'asdfghjk', 'success': True}
+{'exception': None, 'data': None, 'payload': 'asdf1234', 'success': True}
+{'exception': None, 'data': None, 'payload': '1qazxsw2', 'success': True}
+{'exception': None, 'data': None, 'payload': 'iloveyou', 'success': True}
+{'exception': None, 'data': None, 'payload': '1123581321', 'success': True}
+{'exception': None, 'data': None, 'payload': '789456123', 'success': True}
+{'exception': None, 'data': None, 'payload': '110110110', 'success': True}
+{'exception': None, 'data': None, 'payload': '963852741', 'success': True}
+{'exception': None, 'data': None, 'payload': '123698745', 'success': True}
+{'exception': None, 'data': None, 'payload': '521521521', 'success': True}
+{'exception': None, 'data': None, 'payload': '321321321', 'success': True}
+{'exception': None, 'data': None, 'payload': 'qq123456', 'success': True}
+{'exception': None, 'data': None, 'payload': '520520520', 'success': True}
+{'exception': None, 'data': None, 'payload': 'zzzzzzzz', 'success': True}
+{'exception': None, 'data': None, 'payload': '123456987', 'success': True}
+{'exception': None, 'data': None, 'payload': 'aa123456', 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'dearbook'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'asd123456'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'password'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'xiazhili'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '11223344'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1234567890'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '111111111'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456qq'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '963852741'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456987'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1Q2W3E4R5T'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '77777777'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123qweasd'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'a1234567'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '11235813'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'qazwsxedc'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'ms0083jxj'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '05962514787'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'xiaoxiao'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'qwe123456'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '3.1415926'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '299792458'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1233211234567'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'wojiushiwo'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '9876543210'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '888888888'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'aaaaaaaaaa'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '77585210'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'google250'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456ab'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123123123123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '13145200'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '5841314520'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '20080808'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19491001'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'abcd123456'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '12345abcde'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'a5201314'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'meiyoumima'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'li123456'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'wang123456'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '14789632'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'zhanglei'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '111111aa'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'llllllll'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'z3255500'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'qwert12345'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '012345678'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '258258258'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '52013140'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456qaz'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'Woailaopo'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1234ASDF'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19841028'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '66778899'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456qw'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'hyjzstx8'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '13572468'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1qaz1qaz'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'zxcv1234'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19851010'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'nihao123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'internet'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'woainiwoaini'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'qwe123123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871025'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'miaomiao'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'xiaofeng'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19841023'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '222222222'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871987'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19861026'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '1029384756'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871021'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'tingting'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19861016'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456zz'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123abc123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'oooooooo'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456ok'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'dingding'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871012'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871015'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '12345611'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871017'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456...'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'zxcvbnma'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'tsinghua'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19881016'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'qwertyuio'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123654123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123QWEASDZXC'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '12345abc'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19881021'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19881125'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19861024'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'ZHANGHUI'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', 'ddzj39cb3'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19831220'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871029'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19861122'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '68686868'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '951ljb753'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '........'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '159357123'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '123456ASDF'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19881001'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19861214'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19881029'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19851012'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19810914'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19851030'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '55556666'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871223'), 'success': True}
+{'exception': None, 'data': None, 'payload': ('zhangwei', '19871123'), 'success': True}

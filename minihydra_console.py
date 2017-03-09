@@ -74,13 +74,14 @@ class MiniHydraCli(Cmd):
     #----------------------------------------------------------------------
     @options(option_list=[make_option('-t', '--target', dest='target', help='What you want to attack!'),
                           make_option('-m', '--mod', dest='mod', help='How to attack?'),
-                          make_option('-d', '--dict', dest='dict_file', default=None, help='What dict you want to use'),
+                          make_option('-d', '--dict', dest='dict_file', default=None, help='What dict you want to use, if you want to select ' + 
+                                      'more dicts, split by \',\''),
                           make_option('-c', '--continue', dest='do_continue', action='store_false', default=True, help='Continue Last Session?'),
                           make_option('-s', '--session', dest='session', default=DEFAULT_SESSION, help='Session name'),
                           make_option('-n', '--thread_max', dest='thread_max', default=50, type=int, help='Thread Max'),
                           ])
     def do_start(self, arg, opts=None):
-        """start a hydra instance"""
+        """start a hydra instance""" 
         target = opts.target
         mod = opts.mod
         dict_file = opts.dict_file

@@ -11,14 +11,15 @@ import os
 import json
 import Queue
 import time
+import types
 
-from g3ar import DictParser
+from g3ar import DictParser, DictParserMixer
 from g3ar import ThreadPool
 from g3ar.utils.thread_utils import start_new_thread
 
 from .core.modmanager import ModManager
 from .core.base import ModBase
-from .core.exceptions import ImportModError, NoModExisted, UnknownException, NoTarget, NoMod
+from .core.exceptions import ImportModError, NoModExisted, UnknownException, NoTarget, NoMod, DictsError
 from .core import conf_parser
 
 MINIHYDRA_ROOT = os.path.dirname(__file__)
@@ -79,9 +80,14 @@ class MiniHydra(object):
     def set_dict_file(self, dict_file, session=DEFAULT_SESSION, 
                       do_continue=DO_CONTINUE):
         """"""
-        if not dict_file:
-            dict_file = DEFAULT_DICT_PATH
-        self._dict_parser = DictParser(dict_file, session, do_continue)
+        if isinstance(dict_file, tuple([list, tuple])):
+            self._dict_parser = DictParserMixer(dict_file, do_continue)
+        elif isinstance(dict_file, types.StringTypes) or dict_file == None:
+            if not dict_file:
+                dict_file = DEFAULT_DICT_PATH
+            self._dict_parser = DictParser(dict_file, session, do_continue)
+        else:
+            raise DictsError()
     
     #----------------------------------------------------------------------
     def start(self, async=False):

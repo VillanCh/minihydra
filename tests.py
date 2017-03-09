@@ -46,7 +46,12 @@ class MiniHydraTester(unittest.case.TestCase):
         print testmod.guess('asdfa')
         
     
-    
+    #----------------------------------------------------------------------
+    def test_mixer(self):
+        """"""
+        gen = MiniHydra('target','testmod', dict_file=['minihydra/dicts/default_un.txt',
+                                                 'minihydra/dicts/default_pd.txt'])
+        gen.start(False)
 
 if __name__ == '__main__':
     unittest.main()

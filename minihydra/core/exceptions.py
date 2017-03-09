@@ -34,9 +34,15 @@ class NoMod(Exception):
     pass
 
 ########################################################################
-class ModReturnError:
+class ModReturnError(Exception):
     """"""
     pass
+
+########################################################################
+class DictsError(Exception):
+    """"""
+    pass
+    
     
     
     
