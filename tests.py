@@ -28,7 +28,7 @@ class MiniHydraTester(unittest.case.TestCase):
                           dict_file=None, 
                           session='default', do_continue=False,
                           debug=False)
-        gen = hydra.start(async=True)
+        gen = hydra.start(async=False)
         self.assertTrue(isinstance(gen, types.GeneratorType))
         
     #----------------------------------------------------------------------

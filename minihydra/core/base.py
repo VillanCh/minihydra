@@ -117,6 +117,11 @@ class ModBase(Base):
     def get_predata(self):
         """"""
         return self._predata
+
+    #----------------------------------------------------------------------
+    def finish(self):
+        """"""
+        self._finished = True
         
     
     

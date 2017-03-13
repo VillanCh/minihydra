@@ -1,4 +1,4 @@
-# MiniHydra: 爆破的艺术 
+# MiniHydra: 爆破的艺术
 [![Build Status](https://travis-ci.org/VillanCh/minihydra.svg?branch=master)](https://travis-ci.org/VillanCh/minihydra)
 
 MiniHydra 我们可以很自豪的把它称作一个爆破框架，为什么？它不仅仅针对密码爆破，
@@ -34,7 +34,9 @@ MiniHydra 我们可以很自豪的把它称作一个爆破框架，为什么？�
 关于 `mod` 就可以把它当作是打游戏时候需要加载的补丁，我们甚至可以随用随写，编写极为简单，
 完全让人专注业务逻辑。
 
-架构图解：TODO
+架构图解：  
+![Arch](http://omqhpiogv.bkt.clouddn.com/minihydra_arch.png)
+
 
 ## 依赖
 

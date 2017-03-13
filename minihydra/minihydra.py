@@ -145,7 +145,11 @@ class MiniHydra(object):
         for i in self._dict_parser:
             while self._pool.get_task_queue().qsize() >= 50:
                 pass
-            
+            finish_it = modinstance.finished
+            if finish_it:
+                while self._pool.get_task_queue().qsize() >= 1:
+                    pass
+                break
             payloads = modinstance.dict_callback(i)
             self._pool.feed(modinstance.guess, payloads)
     
