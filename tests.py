@@ -11,6 +11,8 @@ import types
 
 from minihydra import MiniHydra
 from minihydra.core.modmanager import ModManager
+from minihydra.core.mod_maker import make_mod
+from minihydra.core.base import ModBase
 
 from g3ar.utils.print_utils import print_bar
 
@@ -52,6 +54,18 @@ class MiniHydraTester(unittest.case.TestCase):
         gen = MiniHydra('target','testmod', dict_file=['minihydra/dicts/default_un.txt',
                                                  'minihydra/dicts/default_pd.txt'])
         gen.start(True)
+        
+    #----------------------------------------------------------------------
+    def test_mod_maker(self):
+        """"""
+        def test(payload):
+            print payload
+            return False
+        modclass = make_mod(target_func=test)
+        self.assertTrue(issubclass(modclass, ModBase))
+
+        mh = MiniHydra('target',modclass)
+        mh.start(async=False)
 
 if __name__ == '__main__':
     unittest.main()

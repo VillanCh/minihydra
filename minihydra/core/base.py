@@ -30,7 +30,7 @@ class ModBase(Base):
         
         self._predata = None
     
-        _ret = self.pre()
+        _ret = self._pre()
         self._predata = _ret
         self._finished = _ret['success']
         
@@ -75,7 +75,7 @@ class ModBase(Base):
         return result
     
     #----------------------------------------------------------------------
-    def pre(self):
+    def _pre(self):
         """"""
         result = {}
         result['success'] = False

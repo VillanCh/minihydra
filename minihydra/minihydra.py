@@ -100,7 +100,7 @@ class MiniHydra(object):
         else:
             raise NoTarget()
         
-        if self._mod_name and self._mod:
+        if hasattr(self, '_mod') and self._mod:
             pass
         else:
             raise NoMod()
@@ -196,12 +196,18 @@ class MiniHydra(object):
     #----------------------------------------------------------------------
     def set_mod(self, mod):
         """"""
-        self._mod_name = mod
-        self._mod = ModManager.get_mod(self._mod_name)
-        if not issubclass(self._mod, ModBase):
-            raise ImportModError('[x] not a right ModBase instanct!')
-        elif not self._mod:
-            raise NoModExisted()
+        #
+        # mod is the name of mod
+        #
+        if isinstance(mod, types.StringTypes):
+            self._mod_name = mod
+            self._mod = ModManager.get_mod(self._mod_name)
+            if not issubclass(self._mod, ModBase):
+                raise ImportModError('[x] not a right ModBase instanct!')
+            elif not self._mod:
+                raise NoModExisted()
+        elif issubclass(mod, ModBase):
+            self._mod = mod
     
     @property
     def pool(self):
