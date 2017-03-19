@@ -30,12 +30,14 @@ def do_telnet(Host, username, password, port=0):
     
         # 登录完毕后执行命令  
         tn.read_very_eager() 
-        command = 'echo "aabbccddeeffgghh"'
+        command = 'echo "aabbccdd""eeffgghh"'
         tn.write('%s\n' % command)
         tn.write('%s\n' % command)  
         tn.write('%s\n' % command)  
     
         #执行完毕后，终止Telnet连接（或输入exit退出）  
+        #
+        #
         _buffer = tn.read_until('aabbccddeeffgghh', timeout=3)
         if 'aabbccddeeffgghh' in _buffer:
             
@@ -63,6 +65,7 @@ class TELNETBRUTE(ModBase):
             port = int(_ret[1])
         else:
             host = self.target
+            port = 0
             
         
         result = do_telnet(host, username, password, port)

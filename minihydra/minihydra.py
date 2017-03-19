@@ -98,7 +98,7 @@ class MiniHydra(object):
                 if _ret:
                     _dicts.append(_dict_single)
                 else:
-                    _dict_single_ex = os.path.join(DEFAULT_DICT_DIR, _ret)
+                    _dict_single_ex = os.path.join(DEFAULT_DICT_DIR, _dict_single)
                     if os.path.exists(_dict_single_ex):
                         _dicts.append(_dict_single_ex)
                     else:
