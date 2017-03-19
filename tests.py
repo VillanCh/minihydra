@@ -65,7 +65,7 @@ class MiniHydraTester(unittest.case.TestCase):
         self.assertTrue(issubclass(modclass, ModBase))
 
         mh = MiniHydra('target',modclass)
-        mh.start(async=False)
+        mh.start(async=True)
 
 if __name__ == '__main__':
     unittest.main()

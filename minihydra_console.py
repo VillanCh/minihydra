@@ -85,10 +85,13 @@ class MiniHydraCli(Cmd):
         target = opts.target
         mod = opts.mod
         dict_file = opts.dict_file
-        if ',' in dict_file:
-            dict_file = dict_file.split(',')
+        if dict_file:
+            if ',' in dict_file:
+                dict_file = dict_file.split(',')
+            else:
+                pass
         else:
-            pass
+            dict_file = None
         
         thread_max = opts.thread_max
         session = opts.session
@@ -138,6 +141,7 @@ class MiniHydraCli(Cmd):
     def do_stop(self, args):
         """Stop the hydra"""
         self._hydra.stop()
+        del self._hydra
     
     #----------------------------------------------------------------------
     def _collect_result(self):

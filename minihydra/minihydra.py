@@ -22,15 +22,23 @@ from .core.base import ModBase
 from .core.exceptions import ImportModError, NoModExisted, UnknownException, NoTarget, NoMod, DictsError
 from .core import conf_parser
 
+#
+# DEFINE PATHS
+#
 MINIHYDRA_ROOT = os.path.dirname(__file__)
+DEFAULT_DICT_DIR = os.path.join(MINIHYDRA_ROOT, 'dicts/')
+DEFAULT_DICT_PATH = os.path.join(MINIHYDRA_ROOT, 'dicts/default_pd.txt')
 
+#
+# DEFINE CONST
+#
 DEFAULT_SESSION = conf_parser.DEFAULT_SESSION
 DO_CONTINUE = conf_parser.DO_CONTINUE
 THREAD_MAX = conf_parser.THREAD_MAX
 DEBUG = conf_parser.DEBUG
 SUCCESS_FILE = conf_parser.SUCCESS_FILE
 
-DEFAULT_DICT_PATH = os.path.join(MINIHYDRA_ROOT, 'dicts/default_pd.txt')
+
 
 ########################################################################
 class MiniHydra(object):
@@ -84,7 +92,21 @@ class MiniHydra(object):
                       do_continue=DO_CONTINUE):
         """"""
         if isinstance(dict_file, tuple([list, tuple])):
-            self._dict_parser = DictParserMixer(dict_file, do_continue)
+            _dicts = []
+            for _dict_single in dict_file:
+                _ret = os.path.exists(_dict_single)
+                if _ret:
+                    _dicts.append(_dict_single)
+                else:
+                    _dict_single_ex = os.path.join(DEFAULT_DICT_DIR, _ret)
+                    if os.path.exists(_dict_single_ex):
+                        _dicts.append(_dict_single_ex)
+                    else:
+                        raise NoSuchDict('[x] No "{orig}" and No {aft} File!'.format(
+                            orig = _dict_single,
+                            aft = _dict_single_ex,
+                        ))
+            self._dict_parser = DictParserMixer(_dicts, do_continue)
         elif isinstance(dict_file, types.StringTypes) or dict_file == None:
             if not dict_file:
                 dict_file = DEFAULT_DICT_PATH

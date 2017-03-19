@@ -9,7 +9,7 @@
 import unittest
 import telnetlib
 
-#from ..core.base import ModBase
+from ..core.base import ModBase
 
 def do_telnet(Host, username, password, port=0):  
 
@@ -36,14 +36,18 @@ def do_telnet(Host, username, password, port=0):
         tn.write('%s\n' % command)  
     
         #执行完毕后，终止Telnet连接（或输入exit退出）  
-        tn.read_until('aabbccddeeffgghh', timeout=3)  
-        tn.close() # tn.write('exit\n') 
-        return True
+        _buffer = tn.read_until('aabbccddeeffgghh', timeout=3)
+        if 'aabbccddeeffgghh' in _buffer:
+            
+            tn.close() # tn.write('exit\n') 
+            return True
+        else:
+            raise StandardError()
     except:
         return False
 
 ########################################################################
-class TELNETBRUTE:#(ModBase):
+class TELNETBRUTE(ModBase):
     """"""
 
     #----------------------------------------------------------------------
