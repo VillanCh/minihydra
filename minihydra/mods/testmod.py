@@ -23,7 +23,7 @@ class Tester(ModBase):
         
         time.sleep(random.randint(2,4))
         if random.randint(1,6) == 4:
-            self.finish()
+            #self.finish()
             return True
         else:
             return False
