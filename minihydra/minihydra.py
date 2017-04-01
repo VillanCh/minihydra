@@ -208,12 +208,6 @@ class MiniHydra(object):
                 yield self._default_result_callback(result)
         except KeyboardInterrupt as e:
             raise e
-            
-        
-    #----------------------------------------------------------------------
-    def set_target(self, target):
-        """"""
-        self._target = target
         
     #----------------------------------------------------------------------
     def set_mod(self, mod):
