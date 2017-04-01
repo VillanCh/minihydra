@@ -1,5 +1,5 @@
-from ..core.base import ModBase
-from ..core.exceptions import ModReturnError
+from .base import ModBase
+from .exceptions import ModReturnError
 
 ########################################################################
 class TemplateMod(ModBase):
@@ -16,7 +16,7 @@ class TemplateMod(ModBase):
     #----------------------------------------------------------------------
     def attack(self, payload):
         """"""
-        result = self._attack_func(payload)
+        result = self._attack_func(self.target, payload)
         if isinstance(result, bool):
             if self._only_one_result:
                 if result:

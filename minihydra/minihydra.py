@@ -21,6 +21,7 @@ from .core.modmanager import ModManager
 from .core.base import ModBase
 from .core.exceptions import ImportModError, NoModExisted, UnknownException, NoTarget, NoMod, DictsError
 from .core import conf_parser
+from .core import mod_maker
 
 #
 # DEFINE PATHS
@@ -45,7 +46,7 @@ class MiniHydra(object):
     """"""
 
     #----------------------------------------------------------------------
-    def __init__(self, target=None, mod=None, dict_file=None, session=DEFAULT_SESSION,
+    def __init__(self, target=None, mod=None, one_result=False, dict_file=None, session=DEFAULT_SESSION,
                  do_continue=DO_CONTINUE, thread_max=THREAD_MAX, 
                  result_callback=None, debug=DEBUG,
                  success_file=SUCCESS_FILE):
@@ -63,6 +64,7 @@ class MiniHydra(object):
         #
         # current mod
         #
+        self._one_result = one_result
         self.set_mod(mod)
 
         
@@ -186,7 +188,7 @@ class MiniHydra(object):
         if result.get('success'):
             self._final_queue.put(result)
             with open(self._success_file, 'ab+') as fp:
-                fp.write("{payload}\n".format(payload=result))
+                    fp.write("{payload}\n".format(payload=result))
         
         return result
 
@@ -222,8 +224,12 @@ class MiniHydra(object):
                 raise ImportModError('[x] not a right ModBase instanct!')
             elif not self._mod:
                 raise NoModExisted()
+        elif callable(mod):
+            self._mod = mod_maker.make_mod(mod, self._one_result)
         elif issubclass(mod, ModBase):
-            self._mod = mod
+            self._mod = mod            
+            
+        
     
     @property
     def pool(self):

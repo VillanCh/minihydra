@@ -66,6 +66,20 @@ class MiniHydraTester(unittest.case.TestCase):
 
         mh = MiniHydra('target',modclass)
         mh.start(async=True)
+    
+    #----------------------------------------------------------------------
+    def test_build_mod_auto(self):
+        """"""
+        def test(target, payload):
+            #print 'target:{target}  -  payload:{p}'.format(target=target, p=payload)
+            return False
+            
+        hydra = MiniHydra('target1', test, do_continue=False)
+        result = hydra.start(async=True)
+        
+        for i in range(4):
+            print result.next()
+        
 
 if __name__ == '__main__':
     unittest.main()
