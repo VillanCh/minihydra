@@ -20,7 +20,7 @@ from g3ar.utils.thread_utils import start_new_thread
 from .core.modmanager import ModManager
 from .core.base import ModBase
 from .core.exceptions import ImportModError, NoModExisted, UnknownException, NoTarget, NoMod, DictsError
-from .core import conf_parser
+from .core import conf
 from .core import mod_maker
 
 #
@@ -33,11 +33,11 @@ DEFAULT_DICT_PATH = os.path.join(MINIHYDRA_ROOT, 'dicts/default_pd.txt')
 #
 # DEFINE CONST
 #
-DEFAULT_SESSION = conf_parser.DEFAULT_SESSION
-DO_CONTINUE = conf_parser.DO_CONTINUE
-THREAD_MAX = conf_parser.THREAD_MAX
-DEBUG = conf_parser.DEBUG
-SUCCESS_FILE = conf_parser.SUCCESS_FILE
+DEFAULT_SESSION = conf.DEFAULT_SESSION
+DO_CONTINUE = conf.DO_CONTINUE
+THREAD_MAX = conf.THREAD_MAX
+DEBUG = conf.DEBUG
+SUCCESS_FILE = conf.SUCCESS_FILE
 
 
 
@@ -220,10 +220,13 @@ class MiniHydra(object):
         if isinstance(mod, types.StringTypes):
             self._mod_name = mod
             self._mod = ModManager.get_mod(self._mod_name)
-            if not issubclass(self._mod, ModBase):
-                raise ImportModError('[x] not a right ModBase instanct!')
-            elif not self._mod:
-                raise NoModExisted()
+            try:
+                if not issubclass(self._mod, ModBase):
+                    raise ImportModError('[x] not a right ModBase instanct!')
+                elif not self._mod:
+                    raise NoModExisted()
+            except:
+                raise ImportModError('[x] No such mod in mods or unexpected modname')
         elif callable(mod):
             self._mod = mod_maker.make_mod(mod, self._one_result)
         elif issubclass(mod, ModBase):

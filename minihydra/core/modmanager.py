@@ -13,7 +13,7 @@ import importlib
 
 from g3ar.utils.inspect_utils import get_classes
 
-from . import conf_parser
+from . import conf
 from .exceptions import ImportModError
 from .base import ModBase
 
@@ -44,7 +44,7 @@ class ModManager(object):
     @classmethod
     def get_mod_list(cls):
         """"""
-        return conf_parser.MODLIST
+        return conf.MODLIST
     
     #----------------------------------------------------------------------
     @classmethod
