@@ -13,21 +13,44 @@ MiniHydra 我们可以很自豪的把它称作一个爆破框架，为什么？�
 * 更加节能的线程池
 * 进度保存与任务继续
 
-#### 3.9 - UPDATE
+#### v0.5.0 - UPDATE
 
-鬼知道我经历了什么。  
-好吧，我觉得现在 MiniHydra 可能已经一点也不 Mini 了，因为，昨天到今天我可能赋予了它，
-非常强大的功能：
+在这个版本中，MiniHydra 升级为一个第三方的包，而不是一个小型程序框架，你可以通过 pip install minihydra 就可以很轻松的开始 minihydra 的使用，并且通过传入函数来快速构建攻击模块。
 
-* 多个字典同时的流式读取与进度保存
-* 模块预处理：不爆破就尽量不要爆破
+## Quick Look
 
-#### TODO LIST
+{% highlight python %}
+from minihydra import MiniHydra
+import requests
+import urllib
 
-* 更快捷的调用自定义函数！
-* 更快捷的
+dict_name = '/Users/v1ll4n/Desktop/dir.txt'
 
-## 架构
+#----------------------------------------------------------------------
+def target_func(target, payloads):
+    """"""
+    _p = payloads[0]
+    _t = target
+
+    _target_url = _t + _p
+    #print _target_url
+
+    rsp = requests.get(_target_url)
+    if rsp.status_code == 404:
+        return False
+    else:
+        return True
+
+hydra = MiniHydra(target='http://172.16.51.130', mod=target_func, dict_file=[dict_name,], thread_max=10)
+
+hydra.start()
+
+_queue = hydra.get_final_queue()
+while True:
+    print _queue.get()
+{% endhighlight %}
+
+## 架构_
 
 微内核架构大家并不陌生，MiniHydra 就是采用了微内核架构
 所有的具体的爆破的功能都作为它的插件存在着，我们称之为 `mod`。
@@ -48,9 +71,9 @@ cmd2
 progressive
 ```
 
-## How to use？
+## 当然你可以通过 shell 调用 minihydra
 
-MiniHydra 暂时提供一个 `cmd2` 支持的 cli 接口，对 `cmd2` 有了解的用户肯定知道，
+MiniHydra 还提供一个 `cmd2` 支持的 cli 接口，对 `cmd2` 有了解的用户肯定知道，
 一个 `cmd2` 可以做到与 `python shell ／ ipython ／ shell` 无缝的链接，
 可以做到管道，重定向，等各种操作。
 
