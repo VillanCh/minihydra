@@ -24,8 +24,13 @@ from minihydra import MiniHydra
 import requests
 import urllib
 
+#
+# 准备字典
+#----------------------------------------------------------------------
 dict_name = '/Users/v1ll4n/Desktop/dir.txt'
 
+#
+# 准备爆破核心函数
 #----------------------------------------------------------------------
 def target_func(target, payloads):
     """"""
@@ -41,10 +46,17 @@ def target_func(target, payloads):
     else:
         return True
 
+#
+# 创建 minihydra 实例
+#
 hydra = MiniHydra(target='http://172.16.51.130', mod=target_func, dict_file=[dict_name,], thread_max=10)
 
+# 开始爆破
 hydra.start()
 
+#
+# 收集结果
+#
 _queue = hydra.get_final_queue()
 while True:
     print _queue.get()
