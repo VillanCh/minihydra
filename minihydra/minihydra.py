@@ -93,7 +93,7 @@ class MiniHydra(object):
     def set_dict_file(self, dict_file, session=DEFAULT_SESSION, 
                       do_continue=DO_CONTINUE):
         """"""
-        if isinstance(dict_file, tuple([list, tuple])):
+        if isinstance(dict_file, tuple([list, tuple, set])):
             _dicts = []
             for _dict_single in dict_file:
                 _ret = os.path.exists(_dict_single)

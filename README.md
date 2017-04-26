@@ -19,7 +19,7 @@ MiniHydra 我们可以很自豪的把它称作一个爆破框架，为什么？�
 
 ## Quick Look
 
-{% highlight python %}
+```python
 from minihydra import MiniHydra
 import requests
 import urllib
@@ -48,7 +48,7 @@ hydra.start()
 _queue = hydra.get_final_queue()
 while True:
     print _queue.get()
-{% endhighlight %}
+```
 
 ## 架构_
 
